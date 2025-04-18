@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "MinecraftTen";
+  src: url("fonts/MinecraftTen.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MinecraftSeven';
+  src: url('fonts/MinecraftSeven.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+
+  background-color: #1E201E;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  all: unset
+}
+
+.header {
+  margin: 0;
+  font-size: 50px;
+  font-family: "MinecraftTen", Arial;
+  line-height: 1.7;
+  text-align: center;
+  color: #ECDFCC;
+}
+
+#ui-input {
+  width: calc(100% - 12px);
+  max-width: 447px;
+  height: 420px;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "MinecraftSeven", Arial;
+  resize: none;
+  background-color: #3C3D37;
+  border: none;
+  outline: none;
+  color: #ECDFCC;
+  margin-bottom: 10px;
+}
+
+#ui-output {
+  width: 100%;
+  max-width: 447px;
+  overflow-y: auto;
+  scrollbar-width: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ui-output::-webkit-scrollbar {
+  display: none;
+}
+
+#ui-output > p {
+  color: #ECDFCC;
+  font-family: "MinecraftSeven", Arial;
+  margin: 0 0 4px 0;
+  padding-top: 4px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #ECDFCC;
+}
+
+#validate-button {
+  width: calc(100%); /* #ui-input (width + padding) */
+  max-width: 447px;
+  height: 35px;
+  font-family: "MinecraftSeven", Arial;
+  font-size: 15px;
+  text-align: center;
+  color: #ECDFCC;
+  background-color: #328E6E;
+  border-radius: 10px;
+}
+
+#validate-button:hover {
+  background-color: #29a177;
+}
+
+#size-validator {
+  width: 90%;
+  display: none;
+}
+
+@media (max-width: 475px) {
+  .header:not(#size-validator) {
+    display: none;
+  }
+
+  #ui-input {
+    display: none;
+  }
+
+  #ui-output {
+    display: none;
+  }
+
+  #validate-button {
+    display: none;
+  }
+
+  #size-validator {
+    display: block;
+  }
+}
