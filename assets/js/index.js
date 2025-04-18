@@ -1,4 +1,4 @@
-import { ErrorTypes } from "./errorTypes.js";
+import { ErrorTypes } from "./enums/errorTypes.js";
 
 const validateButton = document.getElementById("validate-button");
 const uiInput = document.getElementById("ui-input");
@@ -18,7 +18,7 @@ class UIValidation {
 
   checkJSON() {
     if (this.inputVal.trim() === "") {
-      addOutput(ErrorTypes.invalidEmptyJSON);
+      addOutput(ErrorTypes.InvalidEmptyJSON);
       return false;
     }
 
@@ -46,5 +46,5 @@ validateButton.addEventListener("click", () => {
 
   new UIValidation(uiInput.value)
     .validate()
-    .catch(() => addOutput(ErrorTypes.noErrorFound, false));
+    .catch(() => addOutput(ErrorTypes.NoErrorFound, false));
 });
